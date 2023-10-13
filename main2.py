@@ -19,7 +19,6 @@ def process(session, image, *, size=None, bgcolor='white'):
 
 for path_in in Path(r'images').glob('*.png'):
     path_out = path_in.parent / f"{path_in.stem}-out.jpeg"
-    # no point processing images that have already been done!
     if path_out.exists():
         continue
     with Image.open(path_in) as img:
